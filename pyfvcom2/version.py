@@ -1,5 +1,3 @@
-# THIS FILE IS GENERATED FROM PyFVCOM2 SETUP.PY
-
 short_version = "0.1.0"
 version = "0.1.0"
 full_version = "0.1.0.dev0+d460c18"

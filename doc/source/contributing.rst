@@ -88,7 +88,9 @@ Publishing a PyPI Release
 
 PyPI releases are built from the repository metadata in ``pyproject.toml``.
 Before publishing, update the release version in ``pyfvcom2/version.py`` and
-make sure the version has not already been published to PyPI.
+make sure the version has not already been published to PyPI.  This is the
+single source of truth for the project version; the top-level ``version.py``
+module reads from it automatically.
 
 Build and validate both distribution formats:
 

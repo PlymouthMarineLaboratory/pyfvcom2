@@ -3,8 +3,8 @@
 Installation
 ============
 
-PyFVCOM2 is distributed through PyPI and can also be installed from a source
-checkout.
+PyFVCOM2 is distributed through conda-forge and PyPI and can also be installed
+from a source checkout.
 
 Python Versions
 ---------------
@@ -15,7 +15,14 @@ currently advertise Python 3.9, 3.10, and 3.11.
 Normal User Installation
 ------------------------
 
-Use PyPI for a normal user installation:
+Install PyFVCOM2 from conda-forge with:
+
+.. code-block:: bash
+
+   conda create -n pyfvcom2 -c conda-forge pyfvcom2
+   conda activate pyfvcom2
+
+Alternatively, install from PyPI:
 
 .. code-block:: bash
 
@@ -66,6 +73,34 @@ To install the editable package manually in an existing environment:
 .. code-block:: bash
 
    python -m pip install -e .
+
+Building the Conda Package Locally
+----------------------------------
+
+The recipe in ``conda/meta.yaml`` uses the tagged GitHub release for conda-forge.
+To build from the current checkout instead, temporarily replace its ``source``
+section with:
+
+.. code-block:: yaml
+
+   source:
+     path: ..
+
+Then build from the repository root:
+
+.. code-block:: bash
+
+   CONDA_BLD_PATH=/tmp/pyfvcom2-conda-bld conda build conda -c conda-forge
+
+Create a test environment from the resulting local package:
+
+.. code-block:: bash
+
+   conda create -n pyfvcom2-conda-test -c conda-forge --use-local pyfvcom2=0.1.0
+   conda activate pyfvcom2-conda-test
+   python -c "import pyfvcom2; print(pyfvcom2.__version__)"
+
+Restore the tagged-release ``source`` section before committing the recipe.
 
 Installation Test
 -----------------

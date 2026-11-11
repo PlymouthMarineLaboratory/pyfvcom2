@@ -3,8 +3,8 @@
 Installation
 ============
 
-PyFVCOM2 is published on conda-forge and can also be installed from a source
-checkout.
+PyFVCOM2 is distributed through conda-forge and PyPI and can also be installed
+from a source checkout.
 
 Python Versions
 ---------------
@@ -22,8 +22,20 @@ Install PyFVCOM2 from conda-forge with:
    conda create -n pyfvcom2 -c conda-forge pyfvcom2
    conda activate pyfvcom2
 
-For a local checkout installation without development tools, use the source
-installation route below.
+Alternatively, install from PyPI:
+
+.. code-block:: bash
+
+   python -m pip install pyfvcom2
+
+Use the source-installation route below if you need a particular checkout
+instead of the latest published release.
+
+Source Installation
+-------------------
+
+Use this route if you want to install PyFVCOM2 from a local checkout without
+installing development tools.
 
 First, create and activate an environment:
 
